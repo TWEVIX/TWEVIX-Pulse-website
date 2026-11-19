@@ -8,17 +8,208 @@ st.set_page_config(
     page_title="TWEVIX Pulse™ | Solutions, Impact Telemetry & Verified Talent SaaS",
     page_icon=":material/monitoring:",
     layout="wide",
+    initial_sidebar_state="collapsed",
+)
+
+# --- CUSTOM CSS MATCHING TWEVIX.COM LIGHT ENTERPRISE DESIGN ---
+st.markdown(
+    """
+    <style>
+    /* Clean Light Enterprise Canvas matching twevix.com */
+    .stApp {
+        background-color: #f8fafc;
+        color: #0f172a;
+    }
+    .block-container {
+        padding-top: 1.5rem !important;
+        max-width: 1200px !important;
+    }
+
+    /* Top Brand Bar */
+    .brand-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 14px 24px;
+        margin-bottom: 20px;
+        box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    }
+    .brand-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+    }
+    .brand-title {
+        font-size: 1.15rem;
+        font-weight: 800;
+        color: #0f172a;
+        letter-spacing: -0.01em;
+    }
+    .brand-tagline {
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        color: #0284c7;
+        text-transform: uppercase;
+    }
+
+    /* Hero Banner matching twevix.com */
+    .hero-box {
+        background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 55%, #ecfdf5 100%);
+        border: 1px solid #bae6fd;
+        border-radius: 18px;
+        padding: 36px 40px;
+        margin-bottom: 24px;
+        box-shadow: 0 10px 28px rgba(2, 132, 199, 0.08);
+    }
+    .hero-eyebrow {
+        display: inline-block;
+        background: #e0f2fe;
+        color: #0369a1;
+        font-size: 0.76rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding: 5px 14px;
+        border-radius: 999px;
+        margin-bottom: 14px;
+    }
+    .hero-title {
+        font-size: 2.3rem;
+        font-weight: 800;
+        line-height: 1.18;
+        color: #0f172a;
+        margin: 0 0 12px 0;
+    }
+    .hero-accent {
+        color: #0284c7;
+    }
+    .hero-sub {
+        font-size: 1.05rem;
+        color: #334155;
+        max-width: 820px;
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    /* Elevated White KPI Cards */
+    .kpi-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-top: 4px solid #0284c7;
+        border-radius: 14px;
+        padding: 18px 20px;
+        box-shadow: 0 4px 14px rgba(15, 23, 42, 0.04);
+    }
+    .kpi-card.teal { border-top-color: #0d9488; }
+    .kpi-card.indigo { border-top-color: #4f46e5; }
+    .kpi-card.amber { border-top-color: #d97706; }
+    .kpi-label {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: #64748b;
+        font-weight: 700;
+    }
+    .kpi-value {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #0f172a;
+        margin: 4px 0 2px 0;
+    }
+    .kpi-delta {
+        font-size: 0.82rem;
+        color: #0284c7;
+        font-weight: 600;
+    }
+
+    /* Elevated White Solution & Talent Cards */
+    .saas-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 24px;
+        margin-bottom: 14px;
+        box-shadow: 0 4px 18px rgba(15, 23, 42, 0.05);
+        transition: all 0.2s ease;
+    }
+    .saas-card:hover {
+        border-color: #38bdf8;
+        box-shadow: 0 8px 24px rgba(2, 132, 199, 0.1);
+    }
+    .skill-pill {
+        display: inline-block;
+        background: #f0f9ff;
+        color: #0369a1;
+        border: 1px solid #bae6fd;
+        padding: 4px 12px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        margin: 3px 6px 3px 0;
+    }
+    .impact-pill {
+        display: inline-block;
+        background: #ecfdf5;
+        color: #047857;
+        border: 1px solid #a7f3d0;
+        padding: 4px 12px;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        font-weight: 700;
+    }
+    .product-tag {
+        display: inline-block;
+        background: #eef2ff;
+        color: #4338ca;
+        border: 1px solid #c7d2fe;
+        padding: 4px 10px;
+        border-radius: 6px;
+        font-size: 0.76rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .passport-img {
+        width: 96px;
+        height: 96px;
+        border-radius: 14px;
+        object-fit: cover;
+        border: 2px solid #0284c7;
+        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.18);
+    }
+
+    /* Crisp Corporate Buttons matching twevix.com */
+    .stButton > button, .stLinkButton > a {
+        background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
+        color: #ffffff !important;
+        border: none !important;
+        border-radius: 10px !important;
+        font-weight: 600 !important;
+        padding: 0.55rem 1.15rem !important;
+        box-shadow: 0 4px 12px rgba(2, 132, 199, 0.22) !important;
+    }
+    .stButton > button:hover, .stLinkButton > a:hover {
+        background: linear-gradient(135deg, #0369a1 0%, #075985 100%) !important;
+        color: #ffffff !important;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True,
 )
 
 # --- HELPER: COMPUTE SENIORITY TIER FROM STACKED 3-MONTH CYCLES ---
 def get_tenure_tier(cycle_count: int):
     months = cycle_count * 3
     if cycle_count == 1:
-        return f"{months} Months (1 Cycle)", "Associate Decision Analyst"
+        return f"{months} Months Verified (1 Cycle)", "Associate Decision Analyst"
     elif cycle_count == 2:
-        return f"{months} Months (2 Cycles)", "Applied Decision-Intelligence Specialist"
+        return f"{months} Months Verified (2 Cycles)", "Applied Decision-Intelligence Specialist"
     else:
-        return f"{months} Months ({cycle_count} Cycles)", "Lead Operational Data Architect"
+        return f"{months} Months Verified ({cycle_count} Cycles)", "Lead Operational Data Architect"
 
 # --- HELPER: GENERATE PRINTABLE HTML/PDF CERTIFICATE ---
 def build_certificate_html(
@@ -37,7 +228,7 @@ def build_certificate_html(
 <title>TWEVIX Pulse Verified Certificate - {name}</title>
 <style>
   @page {{ size: A4 landscape; margin: 0; }}
-  body {{ font-family: 'Segoe UI', Arial, sans-serif; background: #f4f7fa; margin: 0; padding: 32px; color: #0f172a; }}
+  body {{ font-family: 'Segoe UI', Arial, sans-serif; background: #f8fafc; margin: 0; padding: 32px; color: #0f172a; }}
   .cert-frame {{
     max-width: 960px; margin: 0 auto; background: #ffffff;
     border: 10px solid #0f2942; outline: 3px solid #0284c7; outline-offset: -18px;
@@ -88,117 +279,11 @@ DEFAULT_RECORDS = [
     {
         "analyst_id": "TVX-001",
         "name": "Jean-Paul Mugisha",
-        "institution": "University of Rwanda (Data Science)",
+        "photo_url": "https://ui-avatars.com",
+        "institution": "University of Rwanda (BSc Data Science)",
         "location": "Kigali, Rwanda (Remote / Hybrid)",
         "availability": "Open to Full-Time & Remote Contract",
+        "skills_with_years": "Python (2.5 Yrs) | SQL & Pandas (2 Yrs) | TechYatch Diagnostic OS™ (6 Mos) | RFM Segmentation (1 Yr)",
         "linkedin": "https://linkedin.com",
         "cycle_number": "Cycle 01 (3 Months)",
         "credential_id": "TVX-8F4A2C91E0B7",
-        "product_vertical": "TechYatch Lab™ • SME Diagnostic OS",
-        "client_sector": "Food & Hospitality SME",
-        "deployment_title": "Perishable Waste & RFM Retention Engine for Kigali Artisan Bakery",
-        "problem_solved": "High daily unsold pastry waste and unmonitored drop-off among repeat weekend buyers.",
-        "verified_outcome": "Audited 90 days of POS & stock CSVs; isolated 22% afternoon perishable waste and engineered an RFM loyalty bundle recovering 14% monthly margin.",
-        "stack": "TechYatch Diagnostic OS™ | Python | RFM Segmentation",
-        "issue_date": "2026-08-15",
-    },
-    {
-        "analyst_id": "TVX-001",
-        "name": "Jean-Paul Mugisha",
-        "institution": "University of Rwanda (Data Science)",
-        "location": "Kigali, Rwanda (Remote / Hybrid)",
-        "availability": "Open to Full-Time & Remote Contract",
-        "linkedin": "https://linkedin.com",
-        "cycle_number": "Cycle 02 (3 Months)",
-        "credential_id": "TVX-4B9E10D7C3A2",
-        "product_vertical": "Global Cross-Border Social-Impact Sprint",
-        "client_sector": "Agri-Supply Chain & NGO",
-        "deployment_title": "East African Agricultural Supply-Chain Price Volatility Forecaster",
-        "problem_solved": "Unpredictable staple commodity price swings disrupting regional procurement budgets.",
-        "verified_outcome": "Co-built time-series forecasting pipelines across 12,000+ regional market records with international peer reviewers.",
-        "stack": "Holt-Winters Forecasting | Pandas | Cross-Border Sprint",
-        "issue_date": "2026-11-15",
-    },
-    {
-        "analyst_id": "TVX-002",
-        "name": "Aline Uwase",
-        "institution": "African Leadership University (ALU)",
-        "location": "Kigali, Rwanda (Remote / On-Site)",
-        "availability": "Open to Paid Internship & Junior Analyst Roles",
-        "linkedin": "https://linkedin.com",
-        "cycle_number": "Cycle 01 (3 Months)",
-        "credential_id": "TVX-3D91B7E4A205",
-        "product_vertical": "TWEVIX CARE™ • Clinical & Cold-Chain Governance AI",
-        "client_sector": "Healthcare & Cold-Chain Operations",
-        "deployment_title": "Cold-Chain Drift Audit & 14-Day Roster Modeling for Outpatient Clinic",
-        "problem_solved": "Manual fridge temperature logs missing early compressor drift and reactive weekend nurse overtime.",
-        "verified_outcome": "Processed 2,160 hourly refrigeration logs via IsolationForest anomaly detection; flagged 2 early compressor drift events and balanced weekend shift coverage.",
-        "stack": "TWEVIX CARE™ Engine | IsolationForest | Shift Telemetry",
-        "issue_date": "2026-11-15",
-    },
-]
-
-@st.cache_data(ttl=300)
-def load_pulse_ledger():
-    sheet_url = st.secrets.get("PULSE_SHEET_CSV_URL", "")
-    if sheet_url:
-        try:
-            df = pd.read_csv(sheet_url)
-            return df.fillna("").to_dict(orient="records")
-        except Exception:
-            pass
-    return DEFAULT_RECORDS
-
-records = load_pulse_ledger()
-
-# Group cycles by analyst_id for HR-Tech view
-grouped_analysts = {}
-for row in records:
-    aid = str(row.get("analyst_id", ""))
-    if aid not in grouped_analysts:
-        grouped_analysts[aid] = {
-            "name": row.get("name", ""),
-            "institution": row.get("institution", ""),
-            "location": row.get("location", "Africa / Global Remote"),
-            "availability": row.get("availability", "Open to Opportunities"),
-            "linkedin": row.get("linkedin", "https://linkedin.com"),
-            "cycles": [],
-        }
-    grouped_analysts[aid]["cycles"].append(row)
-
-# --- HEADER & EXECUTIVE KPI BAR ---
-st.title("TWEVIX Pulse™ | Solutions, Impact Telemetry & Talent SaaS")
-st.markdown(
-    "By **TWEVIX™** • Explore audited real-world deployments across **TechYatch Lab™** and **TWEVIX CARE™**, "
-    "subscribe to on-demand problem-solving plans, or recruit **SHA-256 verified analysts**."
-)
-
-k1, k2, k3, k4 = st.columns(4)
-k1.metric("Audited Deployments", f"{len(records)} Live Cases")
-k2.metric("Verified Analysts", f"{len(grouped_analysts)} Active")
-k3.metric("Stackable Tenure Model", "3 to 12+ Months")
-k4.metric("Verification Standard", "SHA-256 Cryptographic")
-
-st.divider()
-
-# --- MAIN NAVIGATION TABS (MATERIAL VECTOR ICONS) ---
-tab1, tab2, tab3, tab4 = st.tabs([
-    ":material/monitoring: Audited Solutions & Impact",
-    ":material/layers: Subscribe & Solve Your Problem",
-    ":material/person_search: Hire Verified Analysts",
-    ":material/verified_user: SHA-256 Audit & Minting",
-])
-
-# ==============================================================================
-# TAB 1: AUDITED SOLUTIONS & IMPACT TELEMETRY
-# ==============================================================================
-with tab1:
-    st.subheader(":material/analytics: Real-World Problems Solved & Verified Impact Telemetry")
-    st.caption("Inspect anonymized deployments executed by TWEVIX™ engines and supervised analyst pods.")
-
-    sector_options = ["All Sectors"] + sorted(list({r.get("client_sector", "General") for r in records if r.get("client_sector")}))
-    selected_sector = st.selectbox("Filter Solutions by Industry Sector", sector_options)
-
-    for row in records:
-        if selected_sector != "All Sectors" and row.get("client_sector") != selected_sector:
-            continue
