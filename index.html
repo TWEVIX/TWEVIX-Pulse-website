@@ -262,20 +262,22 @@ const modes = {
 };
 
 function setMode(key) {
-  const m = modes[key];
   document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
   document.getElementById('btn-' + key).classList.add('active');
-  document.getElementById('spotlight-box').style.borderColor = m.borderColor;
-  const tagEl = document.getElementById('box-tag');
-  tagEl.className = m.tagClass;
-  tagEl.textContent = m.tag;
-  document.getElementById('box-title').textContent = m.title;
-  document.getElementById('box-desc').textContent = m.desc;
-  const linkEl = document.getElementById('box-link');
-  linkEl.href = m.link;
-  linkEl.textContent = m.btnText;
-  linkEl.className = m.btnClass;
+
+  const sectionMap = {
+    impact: 'impact',
+    talent: 'talent',
+    saas: 'subscriptions',
+    audit: 'audit'
+  };
+
+  const targetEl = document.getElementById(sectionMap[key]);
+  if (targetEl) {
+    targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
 }
+
 </script>
 <div id="subscribe-modal" class="modal-overlay" onclick="if(event.target===this) closeSubscribeModal()">
   <div class="modal-card">
