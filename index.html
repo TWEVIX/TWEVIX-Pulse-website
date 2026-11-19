@@ -277,6 +277,82 @@ function setMode(key) {
   linkEl.className = m.btnClass;
 }
 </script>
+<div id="subscribe-modal" class="modal-overlay" onclick="if(event.target===this) closeSubscribeModal()">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeSubscribeModal()" aria-label="Close">&times;</button>
+    <span class="tag t-em">TWEVIX PULSE™ • Onboarding &amp; Lead Inquiry</span>
+    <h3 style="font-size:22px;font-weight:800;margin-bottom:6px;">Subscribe &amp; Solve Your Problem</h3>
+    <p style="color:#94a3b8;font-size:14px;margin-bottom:20px;">Tell us about your organization or career goals. Our team will respond within 24 hours with onboarding access.</p>
+
+    <form id="lead-form" onsubmit="submitLeadForm(event)">
+      <div class="form-group">
+        <label>Full Name or Organization *</label>
+        <input type="text" id="lead-name" required placeholder="e.g., Kigali Fresh Foods / Jane Doe" />
+      </div>
+
+      <div class="form-group">
+        <label>Email Address *</label>
+        <input type="email" id="lead-email" required placeholder="name@company.com" />
+      </div>
+
+      <div class="form-group">
+        <label>Subscription Plan *</label>
+        <select id="lead-plan">
+          <option value="Individual 12-Week Applied Cohort ($29/mo)">Individual 12-Week Applied Cohort ($29/mo)</option>
+          <option value="Company Diagnostic & Growth SaaS ($99/mo)" selected>Company Diagnostic &amp; Growth SaaS ($99/mo)</option>
+          <option value="Enterprise Managed Data Science Pod ($299/mo)">Enterprise Managed Data Science Pod ($299/mo)</option>
+          <option value="Hire Pre-Vetted Analysts / Interns">Hire Pre-Vetted Analysts / Interns</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label>Problem or Goal Description *</label>
+        <textarea id="lead-notes" rows="3" required placeholder="Briefly describe the operational challenge, dataset, or talent role you need help with..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-em" style="width:100%;border:none;cursor:pointer;font-size:15px;">Submit Subscription Inquiry →</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function openSubscribeModal(defaultPlan) {
+  const modal = document.getElementById('subscribe-modal');
+  modal.classList.add('open');
+  if (defaultPlan) {
+    const select = document.getElementById('lead-plan');
+    for (let i = 0; i < select.options.length; i++) {
+      if (select.options[i].value.includes(defaultPlan)) {
+        select.selectedIndex = i;
+        break;
+      }
+    }
+  }
+}
+
+function closeSubscribeModal() {
+  document.getElementById('subscribe-modal').classList.remove('open');
+}
+
+function submitLeadForm(e) {
+  e.preventDefault();
+  const name = document.getElementById('lead-name').value.trim();
+  const email = document.getElementById('lead-email').value.trim();
+  const plan = document.getElementById('lead-plan').value;
+  const notes = document.getElementById('lead-notes').value.trim();
+
+  const subject = encodeURIComponent("TWEVIX PULSE Subscription Inquiry: " + plan);
+  const body = encodeURIComponent(
+    "Name / Organization: " + name + "\n" +
+    "Contact Email: " + email + "\n" +
+    "Selected Plan: " + plan + "\n\n" +
+    "Operational Problem / Inquiry Details:\n" + notes
+  );
+
+  window.location.href = "mailto:info.pulse@://gmail.com" + subject + "&body=" + body;
+  closeSubscribeModal();
+}
+</script>
 
 </body>
 </html>
