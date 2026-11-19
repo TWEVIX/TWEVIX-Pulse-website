@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TWEVIX PULSE™ | Impact Telemetry, HR-Tech &amp; Solution SaaS • By Twevix™</title>
+  <title>TWEVIX PULSE™ | Impact Telemetry, Talent Sourcing &amp; Solution SaaS • By Twevix™</title>
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
   <style>
@@ -17,6 +17,7 @@
       --blue-dark: #0369a1;
       --teal: #0d9488;
       --indigo: #4f46e5;
+      --amber: #d97706;
       --border: #e2e8f0;
     }
 
@@ -190,18 +191,18 @@
 
     .hero-highlights {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 28px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
     }
 
     .highlight-card {
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 18px;
-      padding: 32px;
+      padding: 28px;
       display: flex;
       align-items: flex-start;
-      gap: 20px;
+      gap: 18px;
       box-shadow: 0 8px 24px rgba(15, 23, 42, 0.05);
     }
 
@@ -218,16 +219,17 @@
     .icon-blue { background: #e0f2fe; color: var(--blue); }
     .icon-teal { background: #ccfbf1; color: var(--teal); }
     .icon-indigo { background: #e0e7ff; color: var(--indigo); }
+    .icon-amber { background: #fef3c7; color: var(--amber); }
 
     .highlight-card h3 {
-      font-size: 1.18rem;
+      font-size: 1.12rem;
       font-weight: 800;
       margin-bottom: 6px;
       color: var(--navy);
     }
 
     .highlight-card p {
-      font-size: 0.96rem;
+      font-size: 0.94rem;
       color: var(--slate-text);
       line-height: 1.55;
     }
@@ -268,21 +270,10 @@
       line-height: 1.75;
     }
 
-    .flagship-panel {
-      background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
-      border: 1.5px solid #bae6fd;
-      border-radius: 22px;
-      padding: 48px;
-      box-shadow: 0 12px 32px rgba(2, 132, 199, 0.08);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
       gap: 32px;
-    }
-
-    .flagship-content {
-      max-width: 720px;
     }
 
     .grid-3 {
@@ -411,7 +402,8 @@
 
     @media (max-width: 768px) {
       .hero h1 { font-size: 2.2rem; }
-      .flagship-panel, .founder-card, .saas-card { padding: 28px 24px; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .founder-card, .saas-card { padding: 28px 24px; }
     }
   </style>
 </head>
@@ -429,8 +421,14 @@
       </a>
 
       <nav class="nav-menu">
-        <a href="#engines">Platform Engines</a>
-        <a href="#subscriptions">SaaS Subscriptions</a>
-        <a href="https://twevix.com">TWEVIX CARE™</a>
-        <a href="https://techyatchlab.com">TechYatch Lab™</a>
+        <a href="#modules">Core Modules</a>
+        <a href="#subscriptions">SaaS &amp; Advisory Plans</a>
+        <a href="#verification">SHA-256 Audit</a>
         <a href="mailto:care@twevix.com">care@twevix.com</a>
+        <a href="#modules" class="btn">Launch Platform →</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
