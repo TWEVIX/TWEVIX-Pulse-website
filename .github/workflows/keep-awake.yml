@@ -1,0 +1,16 @@
+name: Keep TWEVIX PULSE Streamlit Apps Awake
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+
+jobs:
+  ping-apps:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping All 3 TWEVIX PULSE Apps
+        run: |
+          curl -s -o /dev/null -w "Impact App: %{http_code}\n" https://streamlit.app
+          curl -s -o /dev/null -w "Talent App: %{http_code}\n" https://streamlit.app
+          curl -s -o /dev/null -w "Verify App: %{http_code}\n" https://streamlit.app
