@@ -1,446 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TWEVIX PULSE™ | Impact Telemetry, Verified Talent &amp; Solution SaaS • By Twevix™</title>
-  <link rel="icon" type="image/png" href="favicon.png" />
-  <link rel="apple-touch-icon" href="favicon.png" />
-  <style>
-    :root {
-      --bg-page: #f8fafc;
-      --bg-card: #ffffff;
-      --navy: #0f172a;
-      --slate: #475569;
-      --muted: #64748b;
-      --blue: #0284c7;
-      --blue-dark: #0369a1;
-      --teal: #0d9488;
-      --indigo: #4f46e5;
-      --border: #e2e8f0;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>TWEVIX PULSE™ | Impact Telemetry, Verified Talent &amp; Solution SaaS</title>
+<link rel="icon" type="image/png" href="favicon.png" />
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;background:#020617;color:#f8fafc;line-height:1.6}
+a{text-decoration:none;color:inherit}
+header{border-bottom:1px solid #1e293b;background:rgba(2,6,23,.95);position:sticky;top:0;z-index:50}
+.nav{max-width:1040px;margin:0 auto;padding:16px 24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-size:20px}
+.brand img{width:42px;height:42px;border-radius:50%;object-fit:cover;border:1.5px solid #34d399}
+.mint{color:#34d399}
+.sub{font-size:11px;font-weight:500;color:#94a3b8;letter-spacing:.5px}
+.links{display:flex;align-items:center;gap:18px;font-size:13px;font-weight:600;color:#cbd5e1;flex-wrap:wrap}
+.links a:hover{color:#34d399}
+.pill-cta{background:#10b981;color:#020617!important;font-weight:700;padding:8px 18px;border-radius:999px}
+main{max-width:1040px;margin:0 auto;padding:56px 24px}
+.hero{text-align:center;margin-bottom:48px}
+.badge{display:inline-block;background:rgba(16,185,129,.12);border:1px solid rgba(52,211,153,.35);color:#6ee7b7;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:1px;padding:6px 16px;border-radius:999px;margin-bottom:20px}
+h1{font-size:clamp(30px,5vw,46px);font-weight:800;line-height:1.15;margin-bottom:16px}
+.lead{color:#94a3b8;font-size:18px;max-width:720px;margin:0 auto 28px}
+.tabs{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-bottom:32px}
+.tab{font-weight:700;font-size:14px;padding:12px 20px;border-radius:12px;border:2px solid transparent;cursor:pointer;display:inline-flex;align-items:center;gap:8px;transition:transform .15s ease,box-shadow .15s ease}
+.tab:hover{transform:translateY(-1px)}
+.tab-tech{background:#10b981;color:#020617}
+.tab-rec{background:#fbbf24;color:#020617}
+.tab-trn{background:#38bdf8;color:#020617}
+.tab-aud{background:#a78bfa;color:#020617}
+.tab.active{border-color:#ffffff;box-shadow:0 0 20px rgba(255,255,255,.22)}
+.box{background:#0f172a;border:1px solid #1e293b;border-radius:16px;padding:28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:24px;text-align:left}
+.box-hi{border-color:rgba(52,211,153,.45)}
+.box-text{max-width:650px}
+.tag{display:inline-block;font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.8px;padding:4px 12px;border-radius:999px;margin-bottom:10px}
+.t-em{background:rgba(16,185,129,.15);color:#6ee7b7}
+.t-am{background:rgba(251,191,36,.15);color:#fcd34d}
+.t-sk{background:rgba(56,189,248,.15);color:#7dd3fc}
+.t-pu{background:rgba(167,139,250,.15);color:#c4b5fd}
+.box h2,.box h3{font-size:22px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:10px}
+.box p{color:#94a3b8;font-size:15px}
+.btn{display:inline-block;background:#1e293b;border:1px solid #334155;color:#f8fafc;font-weight:700;font-size:14px;padding:12px 22px;border-radius:12px;white-space:nowrap}
+.btn-em{background:#10b981;border-color:#10b981;color:#020617}
+.btn-am{background:#fbbf24;border-color:#fbbf24;color:#020617}
+.btn-sk{background:#38bdf8;border-color:#38bdf8;color:#020617}
+.btn-pu{background:#a78bfa;border-color:#a78bfa;color:#020617}
+.btn:hover{opacity:.9}
+.icon-wrap{width:46px;height:46px;border-radius:12px;display:inline-flex;align-items:center;justify-content:center;margin:0 auto 10px}
+footer{border-top:1px solid #1e293b;padding:32px 24px;text-align:center;font-size:14px;color:#94a3b8}
+footer a{color:#34d399;font-weight:600}
+</style>
+</head>
+<body>
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+<header>
+  <div class="nav">
+    <a href="https://twevix.com" class="brand">
+      <img src="logo.png" alt="TWEVIX PULSE Logo" />
+      <div>
+        <div>TWEVIX <span class="mint">PULSE™</span></div>
+        <div class="sub">IMPACT • TALENT • SAAS • VERIFICATION</div>
+      </div>
+    </a>
+    <div class="links">
+      <a href="#impact">Audited Solutions &amp; Impact Showcase</a>
+      <a href="#talent">Verified Analyst &amp; Intern Directory</a>
+      <a href="#audit">Trust SHA-256 Audit &amp; Credential Minter</a>
+      <a href="#subscriptions" class="pill-cta">Launch Platform →</a>
+    </div>
+  </div>
+</header>
 
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif;
-      background-color: var(--bg-page);
-      color: var(--navy);
-      line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
-    }
+<main>
+  <section class="hero">
+    <div class="badge">By Twevix™ • Impact Telemetry, Talent Sourcing &amp; Solution SaaS</div>
+    <h1>Audited Data Solutions: <span class="mint">Verified Impact &amp; Talent Telemetry</span></h1>
+    <p class="lead"><strong>TWEVIX PULSE™</strong> delivers audited operational impact telemetry, self-serve SaaS &amp; advisory subscriptions, and cryptographically verified data science recruitment—backed by SHA-256 proof-of-work.</p>
 
-    .container {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 28px;
-    }
+    <div style="display:flex;justify-content:center;gap:14px;flex-wrap:wrap;max-width:860px;margin:0 auto 32px;">
+      <div style="flex:1;min-width:190px;background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:18px;text-align:center;">
+        <div class="icon-wrap" style="background:rgba(16,185,129,.15);color:#34d399;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        </div>
+        <div style="font-size:13px;font-weight:700;color:#34d399;">Audited Impact Telemetry</div>
+        <div style="font-size:12px;color:#94a3b8;margin-top:2px;">Verified ROI &amp; Operational Outcomes</div>
+      </div>
 
-    /* --- TOP NAVIGATION (MIRRORING TWEVIX.COM) --- */
-    header {
-      background: rgba(255, 255, 255, 0.96);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+      <div style="flex:1;min-width:190px;background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:18px;text-align:center;">
+        <div class="icon-wrap" style="background:rgba(251,191,36,.15);color:#fbbf24;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        </div>
+        <div style="font-size:13px;font-weight:700;color:#fbbf24;">Verified Data Talent</div>
+        <div style="font-size:12px;color:#94a3b8;margin-top:2px;">Stackable 3–12+ Month Analysts</div>
+      </div>
 
-    .nav-bar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 18px 0;
-      flex-wrap: wrap;
-      gap: 16px;
-    }
+      <div style="flex:1;min-width:190px;background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:18px;text-align:center;">
+        <div class="icon-wrap" style="background:rgba(56,189,248,.15);color:#38bdf8;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+        </div>
+        <div style="font-size:13px;font-weight:700;color:#38bdf8;">SaaS &amp; Advisory Plans</div>
+        <div style="font-size:12px;color:#94a3b8;margin-top:2px;">On-Demand Problem Solving</div>
+      </div>
 
-    .brand-lockup {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      text-decoration: none;
-      color: var(--navy);
-    }
+      <div style="flex:1;min-width:190px;background:#0f172a;border:1px solid #1e293b;border-radius:14px;padding:18px;text-align:center;">
+        <div class="icon-wrap" style="background:rgba(167,139,250,.15);color:#a78bfa;">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path><polyline points="9 12 11 14 15 10"></polyline></svg>
+        </div>
+        <div style="font-size:13px;font-weight:700;color:#a78bfa;">SHA-256 Audit &amp; Minting</div>
+        <div style="font-size:12px;color:#94a3b8;margin-top:2px;">Zero-Trust Credential Ledger</div>
+      </div>
+    </div>
 
-    .brand-lockup img {
-      height: 46px;
-      width: auto;
-      border-radius: 50%;
-      object-fit: contain;
-    }
+    <div class="tabs">
+      <button onclick="setMode('impact')" id="btn-impact" class="tab tab-tech active">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+        Audited Solutions &amp; Impact
+      </button>
+      <button onclick="setMode('talent')" id="btn-talent" class="tab tab-rec">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><rect x="2" y="7" width="20" height="14" rx="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+        Hire Verified Analysts
+      </button>
+      <button onclick="setMode('saas')" id="btn-saas" class="tab tab-trn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline></svg>
+        Subscribe &amp; Solve Your Problem
+      </button>
+      <button onclick="setMode('audit')" id="btn-audit" class="tab tab-aud">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        SHA-256 Audit &amp; Minting
+      </button>
+    </div>
 
-    .brand-title {
-      font-size: 1.2rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: var(--navy);
-    }
-
-    .brand-sub {
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
-      color: var(--blue);
-      text-transform: uppercase;
-      margin-top: 2px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      flex-wrap: wrap;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      color: var(--slate);
-      font-weight: 600;
-      font-size: 0.9rem;
-      transition: color 0.2s ease;
-    }
-
-    .nav-links a:hover {
-      color: var(--blue);
-    }
-
-    /* --- BUTTONS --- */
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dark) 100%);
-      color: #ffffff !important;
-      padding: 13px 24px;
-      border-radius: 10px;
-      font-weight: 700;
-      font-size: 0.94rem;
-      text-decoration: none;
-      box-shadow: 0 6px 16px rgba(2, 132, 199, 0.22);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 22px rgba(2, 132, 199, 0.3);
-    }
-
-    .btn-outline {
-      background: #ffffff;
-      color: var(--navy) !important;
-      border: 1.5px solid #cbd5e1;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--blue);
-      color: var(--blue) !important;
-    }
-
-    /* --- HERO SECTION (TWO-COLUMN SPLIT LIKE TWEVIX.COM) --- */
-    .hero {
-      background: linear-gradient(180deg, #f0f9ff 0%, #f8fafc 100%);
-      border-bottom: 1px solid var(--border);
-      padding: 80px 0 88px 0;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.2fr 1fr;
-      gap: 48px;
-      align-items: center;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      background: #e0f2fe;
-      color: var(--blue-dark);
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      padding: 7px 16px;
-      border-radius: 999px;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-size: 2.85rem;
-      font-weight: 800;
-      line-height: 1.16;
-      letter-spacing: -0.025em;
-      margin-bottom: 20px;
-      color: var(--navy);
-    }
-
-    .hero h1 span {
-      color: var(--blue);
-    }
-
-    .hero-desc {
-      font-size: 1.12rem;
-      color: var(--slate);
-      line-height: 1.75;
-      margin-bottom: 32px;
-    }
-
-    /* Right-hand Hero Stack Cards */
-    .hero-stack {
-      display: flex;
-      flex-direction: column;
-      gap: 18px;
-    }
-
-    .stack-item {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 22px 24px;
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.05);
-    }
-
-    .icon-box {
-      width: 60px;
-      height: 60px;
-      min-width: 60px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .icon-blue { background: #e0f2fe; color: var(--blue); }
-    .icon-teal { background: #ccfbf1; color: var(--teal); }
-    .icon-indigo { background: #e0e7ff; color: var(--indigo); }
-
-    .stack-item h3 {
-      font-size: 1.08rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 2px;
-    }
-
-    .stack-item p {
-      font-size: 0.9rem;
-      color: var(--slate);
-    }
-
-    /* 3 Horizontal Pills below Hero (Matching twevix.com) */
-    .pill-strip {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 44px;
-      padding-top: 32px;
-      border-top: 1px solid #e2e8f0;
-    }
-
-    .feature-pill {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      padding: 10px 20px;
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: var(--navy);
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03);
-    }
-
-    /* --- SECTIONS --- */
-    section {
-      padding: 84px 0;
-    }
-
-    .section-white {
-      background: #ffffff;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .kicker {
-      font-size: 0.8rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      color: var(--blue);
-      text-transform: uppercase;
-      margin-bottom: 8px;
-    }
-
-    .section-title {
-      font-size: 2.1rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      margin-bottom: 14px;
-      color: var(--navy);
-    }
-
-    .section-lead {
-      font-size: 1.06rem;
-      color: var(--slate);
-      max-width: 780px;
-      margin-bottom: 44px;
-      line-height: 1.7;
-    }
-
-    /* --- 01 FLAGSHIP ENGINE BANNER (MATCHING TWEVIX.COM) --- */
-    .flagship-card {
-      background: linear-gradient(135deg, #ffffff 0%, #f0f9ff 100%);
-      border: 1.5px solid #bae6fd;
-      border-radius: 20px;
-      padding: 44px;
-      box-shadow: 0 12px 30px rgba(2, 132, 199, 0.07);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 28px;
-    }
-
-    .flagship-text {
-      max-width: 740px;
-    }
-
-    .flagship-text h2 {
-      font-size: 1.9rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      color: var(--navy);
-    }
-
-    .flagship-text p {
-      font-size: 1.04rem;
-      color: var(--slate);
-      line-height: 1.75;
-    }
-
-    /* --- 3-COLUMN CARDS (MATCHING TWEVIX.COM) --- */
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-      gap: 28px;
-    }
-
-    .card {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 36px 32px;
-      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: #38bdf8;
-      box-shadow: 0 16px 34px rgba(2, 132, 199, 0.11);
-    }
-
-    .card .icon-box {
-      width: 66px;
-      height: 66px;
-      margin-bottom: 22px;
-    }
-
-    .card h3 {
-      font-size: 1.32rem;
-      font-weight: 800;
-      margin-bottom: 12px;
-      color: var(--navy);
-      line-height: 1.3;
-    }
-
-    .card p {
-      font-size: 0.98rem;
-      color: var(--slate);
-      line-height: 1.7;
-      margin-bottom: 26px;
-    }
-
-    /* --- PRICING / SUBSCRIPTION LIST --- */
-    .price {
-      font-size: 2.2rem;
-      font-weight: 800;
-      color: var(--navy);
-      margin: 10px 0 18px 0;
-    }
-
-    .price span {
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: var(--muted);
-    }
-
-    .plan-list {
-      list-style: none;
-      margin-bottom: 28px;
-    }
-
-    .plan-list li {
-      padding: 9px 0;
-      border-bottom: 1px solid #f1f5f9;
-      font-size: 0.95rem;
-      color: var(--slate);
-      display: flex;
-      align-items: flex-start;
-      gap: 10px;
-    }
-
-    .plan-list li::before {
-      content: "✓";
-      color: var(--teal);
-      font-weight: 800;
-    }
-
-    /* --- FOUNDER CARD (MATCHING TWEVIX.COM) --- */
-    .founder-card {
-      background: #ffffff;
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 44px;
-      box-shadow: 0 8px 26px rgba(15, 23, 42, 0.04);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 28px;
-    }
-
-    .founder-text {
-      max-width: 740px;
-    }
-
-    .founder-text h3 {
-      font-size: 1.48rem;
-      font-weight: 800;
-      margin: 6px 0 12px 0;
-      color: var(--navy);
-    }
-
-    .founder-text p {
-      font-size: 1.02rem;
-      color: var(--slate);
-      line-height: 1.75;
-    }
-
-    /* --- FOOTER (MATCHING TWEVIX.COM) --- */
-    footer {
-      background: #ffffff;
-      border-top: 1px solid var(--border);
-      padding: 40px 0;
-      color: var(--slate);
-      font-size: 0.94rem;
-    }
-
-    .footer-bar {
-      display: flex;
+    <div id="spotlight-box" class="box box-hi">
+      <div class="box-text">
+        <div id="box-tag" class="tag t-em">01 • Audited Solutions &amp; Impact Telemetry</div>
+        <h2 id="box-title">Verified Operational Outcomes &amp; ROI Case Telemetry</h2>
+        <p id="box-desc">Inspect anonymized real-world deployments across margin optimization, perishable waste reduction, demand forecasting, and operational risk mitigation—complete with audited before-and-after metrics and one-click solution deployment.</p>
